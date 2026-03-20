@@ -35,7 +35,7 @@ Supported base URLs:
 ## Standalone Client Usage
 
 ```ruby
-require 'lex-tfe'
+require 'legion/extensions/tfe'
 
 client = Legion::Extensions::Tfe::Client.new(
   url:       'https://terraform.uhg.com',
@@ -69,6 +69,8 @@ client.create_variable(
 
 ### Read-only mode
 
+Pass `read_only: true` to `Client.new`. The flag is stored in `@opts` and forwarded automatically to every runner method — no need to pass it per call.
+
 ```ruby
 client = Legion::Extensions::Tfe::Client.new(
   url:       'https://terraform.uhg.com',
@@ -80,7 +82,7 @@ client = Legion::Extensions::Tfe::Client.new(
 client.list(organization: 'my-org')
 
 # Raises Legion::Extensions::Tfe::ReadOnlyError
-client.create(organization: 'my-org', name: 'ws', read_only: client.opts[:read_only])
+client.create(organization: 'my-org', name: 'ws')
 ```
 
 ## Runners
@@ -177,10 +179,13 @@ client.create(organization: 'my-org', name: 'ws', read_only: client.opts[:read_o
 | `get_policy_set`            | Get a policy set by ID                      |
 | `list_workspace_policy_sets`| List policy sets attached to a workspace    |
 
-## Development
+## Requirements
 
-```bash
-bundle install
-bundle exec rspec
-bundle exec rubocop
-```
+- Ruby >= 3.4
+- [LegionIO](https://github.com/LegionIO/LegionIO) framework (optional for standalone client usage)
+- Terraform Enterprise or HCP Terraform API token
+- `faraday` >= 2.0
+
+## License
+
+MIT

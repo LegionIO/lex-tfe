@@ -65,7 +65,7 @@ Common target URLs:
 
 ## Read-Only Guard
 
-`Helpers::Client` accepts a `read_only:` boolean. When `true`, any runner method that performs a write operation (create, update, delete, lock, unlock, apply, discard, cancel) raises `Legion::Extensions::Tfe::ReadOnlyError` before making any API call.
+Each runner method that performs a write operation (create, update, delete, lock, unlock, apply, discard, cancel) accepts a `read_only:` boolean kwarg and raises `Legion::Extensions::Tfe::ReadOnlyError` before making any API call when it is `true`. The standalone `Client` class stores `read_only:` in `@opts` and forwards it automatically to all runner methods via `connection(**override)`.
 
 ## Settings Reference
 
