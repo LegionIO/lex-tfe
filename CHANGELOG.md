@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.1]
+
+### Changed
+- Add legion-cache, legion-crypt, legion-data, legion-json, legion-logging, legion-settings, legion-transport as runtime dependencies
+- Update spec_helper to require sub-gem helpers before loading extension
+
 ## [0.1.0]
 
 ### Added

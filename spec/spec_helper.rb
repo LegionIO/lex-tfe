@@ -2,6 +2,14 @@
 
 require 'bundler/setup'
 
+require 'legion/json'
+require 'legion/logging'
+require 'legion/settings'
+require 'legion/cache'
+require 'legion/crypt'
+require 'legion/data'
+require 'legion/transport'
+
 # Stub Legion::Extensions::Helpers::Lex before loading any runners.
 # In production the full LegionIO framework provides this; in specs we
 # replicate only the behaviour the runner files actually rely on.
