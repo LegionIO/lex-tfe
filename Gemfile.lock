@@ -68,7 +68,7 @@ GEM
     legion-logging (1.3.2)
       logger
       rainbow (~> 3)
-    legion-settings (1.3.14)
+    legion-settings (1.3.19)
       legion-json (>= 1.2.0)
     legion-transport (1.3.9)
       bunny (>= 2.23)
