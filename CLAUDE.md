@@ -10,7 +10,7 @@ Legion Extension that connects LegionIO to Terraform Enterprise (TFE) and HCP Te
 
 **GitHub**: https://github.com/LegionIO/lex-tfe
 **License**: MIT
-**Version**: 0.1.0
+**Version**: 0.1.1
 
 ## Architecture
 
